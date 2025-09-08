@@ -1,8 +1,123 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: #222; /* Ensure dark text by default */
+  background: #f0f2f5;
+}
+
+
+.app-layout {
+  display: flex;
+  min-height: 70vh;
+}
+
+.main-nav.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 48px;
+  max-width: 220px;
+  width: 180px;
+  background: #e6e9f0;
+  border-right: 1px solid #bfc4d1;
+  transition: width 0.2s, min-width 0.2s, max-width 0.2s;
+  position: relative;
+  z-index: 2;
+  color: #222;
+}
+.main-nav.sidebar {
+  min-width: 48px;
+  width: 180px;
+  max-width: 220px;
+}
+.main-nav.sidebar:not(.open) {
+  min-width: 48px;
+  width: 48px;
+  max-width: 48px;
+}
+.sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0.5em 0.5em 1em 0.5em;
+  align-self: flex-end;
+  color: #646cff;
+  transition: color 0.2s;
+}
+.sidebar-toggle:hover {
+  color: #535bf2;
+}
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: flex-start;
+  padding-left: 0.5em;
+}
+.main-nav.sidebar:not(.open) .sidebar-links {
+  align-items: center;
+  padding-left: 0;
+}
+.main-nav.sidebar a {
+  color: #2d3a4a;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, padding 0.2s;
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+.main-nav.sidebar:not(.open) a {
+  padding: 0.5em 0.2em;
+  text-align: center;
+  width: 100%;
+  font-size: 1.1em;
+}
+.main-nav.sidebar a.active-page {
+  background: #646cff22;
+  color: #1a237e;
+  font-weight: 700;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 2em;
+  text-align: left;
+  background: #fff;
+  min-height: 100vh;
+  color: #222;
+  box-shadow: 0 0 8px 0 #e0e0e0;
+}
+
+
+.section-nav {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+  flex-wrap: wrap;
+}
+.section-nav button {
+  background: none;
+  border: 1px solid #646cff44;
+  color: #2d3a4a;
+  padding: 0.3em 0.8em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s;
+}
+.section-nav button.active-section,
+.section-nav button:hover {
+  background: #646cff22;
+  color: #1a237e;
 }
 
 .logo {
